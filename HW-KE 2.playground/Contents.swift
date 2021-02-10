@@ -9,7 +9,7 @@ import UIKit
 
 var myFloat: Float = 2.45
 var myFloatII: Float = 5.67
-var myDouble: Double = Double(myFloat) + Double(myFloatII)
+var myDouble: Double = Double(myFloat + myFloatII)
 print("Result is \(myDouble)")
 
 
@@ -45,9 +45,9 @@ var price = 1000
 var totalSum = 0
 
 if qty >= 5 && qty < 10 {
-    print = 900
+    price = 900
 }else if qty >= 10 {
-    print = 850
+    price = 850
 }
 
 totalSum = qty * price
@@ -61,13 +61,14 @@ print ("new: \(qty) MacBook Pro with the price of: \(price) EUR, will coast you:
  Fix this Fatal error inside the if-else statements to print whenever this age can be converted to Int or not!
  */
 
+var userInputAge: String = "33a"
+//var userInputAgeToInt: Int = Int(userInputAge)
 
-let userInputAge = "34a"
-
-if let convertToInt = Int(userInputAge) {
-    print ("String is convertable to int with the value: \(convertToInt)")
+if let userInputAgeToInt = Int(userInputAge) {
+    print("String is convertable to Int with a value \(userInputAgeToInt)")
 }else {
-    print("unable to convert the String to int")
+    print("not convertable")
+
 }
 
 /*
@@ -80,31 +81,32 @@ let dayOfBirth = 5
 let monthOfBirth = 2
 let yearOfBirth = 1993
 
-let currentDay = 27
-let currentMonth = 1
+let currentDay = 1
+let currentMonth = 2
 let currentYear = 2021
+
+var totalYearsFromBirth = 0
+var totalMonthsFromBirth = 0
+var totalDaysFromBirth = 0
 
 let daysPerMonth = 30
 let monthPerYear = 12
 
-var totalYearsFromBirth = 0
-var totalMonthFromBirth = 0
-var totalDaysFromBirth = 0
-
 totalYearsFromBirth = currentYear - yearOfBirth
-totalMonthFromBirth = (totalYearsFromBirth * monthPerYear) + (currentDay - monthOfBirth)
-totalDaysFromBirth = (totalMonthFromBirth * daysPerMonth) + (currentDay - dayOfBirth)
+totalMonthsFromBirth = (totalYearsFromBirth * monthPerYear) + (currentMonth - monthOfBirth)
+totalDaysFromBirth  = (monthOfBirth * daysPerMonth) + (currentDay - dayOfBirth)
 
-print("Total years: \(totalYearsFromBirth) , total months: \(totalMonthFromBirth), total days: \(totalDaysFromBirth)")
-
-
+print("Total years: \(totalYearsFromBirth) , total months: \(totalMonthsFromBirth), total days: \(totalDaysFromBirth)")
 
 /*
  Ex6:
  Use Exercise 5 monthOfBirth to calculate in which quarter of the year you were born.
  Use switch case to print("I was born in the ... quarter")
  */
-
+let calendar = Calendar.current
+let formatter = DateFormatter()
+let myBirthDateString = "01.05.1986"
+let myBirthDay = formatter.date(from: myBirthDateString)
 if let month = calendar.dateComponents([.month], from: myBirthDay).month {
     var quarter = 0
     

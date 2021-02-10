@@ -9,21 +9,20 @@ import UIKit
  */
 
 
-
 let period = 1...5
 let amount = 500000
 
-var rate =
+var rate = 0,3
 var profit = (amount * rate) * period
-var deposit = amount + profit
+var deposit  = amount + profit
 
-for profit in period {
+for _ in period {
     print("Amount of income after \(period) years will be \(profit) Eur. My total deposit will be \(deposit) Eur !")
 }
 
 
 /*
- EX 2
+ Exercise 2
  Create an integer array with any set of numbers and  print("My even numbers are: \(evenNumber)")
  Use a % inside the for loop.
  */

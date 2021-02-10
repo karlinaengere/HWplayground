@@ -32,7 +32,6 @@ Exercise 2.4
 Declare a Float variable named daysPassed and set it to the number of days since you were born plus 10 years (use myAgeInTenYears(variable) and daysInYear(constant)).
 */
 
-
 var daysPassed: Float = Float(myAgeInTenYears) * Float(daysInYear)
 
 
